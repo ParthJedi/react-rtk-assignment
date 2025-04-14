@@ -11,36 +11,32 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Application Functionality
 
-### `npm test`
+The application allows a user to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Create and remove action lists.
+- Create, update and remove action cards within a list.
 
-### `npm run build`
+The action list provides a button at it's bottom to add more cards. These cards, that are contained within a list can be rearranged by simple drag and drop.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+An action card within a list provides three functionalies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Edit: A card's content can be updated by clicking on it's icon, doing the changes and clicking anywhere out of the text box.
+- Remove: A card can be removed by clicking on it's close/remove icon.
+- Status: The status of a card can be toggled between complete and untouched.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My Approach for development
 
-### `npm run eject`
+- Folder Structure: The project has three main folders:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. componenets folder - containing the React components
+2. store folder - contains Redux-Toolkit files for slice and store.
+3. utils - contains files for TypeScript interfaces, initaial state and utility functions.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I have used Redux-Toolkit for managing the application state.
+The application state has two main portions, first the array of lists where every list in turn consists of an array of action cards.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I have handled all the operations mentioned in the assignment by writing it's corresponding state logic in the `applicationSlice.ts` file.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For rearranging cards, I have used the `dnd-kit` packages.
