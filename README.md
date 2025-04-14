@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<img width="953" alt="image" src="https://github.com/user-attachments/assets/ff272f6e-d5d5-481a-b141-e97731b867cd" />
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -18,7 +21,7 @@ The application allows a user to:
 - Create and remove action lists.
 - Create, update and remove action cards within a list.
 
-The action list provides a button at it's bottom to add more cards. These cards, that are contained within a list can be rearranged by simple drag and drop.
+The action list provides a button at it's bottom to add more cards. These cards, that are contained within a list, can be rearranged by simple drag and drop.
 
 An action card within a list provides three functionalies:
 
