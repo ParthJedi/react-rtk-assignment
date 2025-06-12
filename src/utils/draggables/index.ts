@@ -6,9 +6,7 @@ export const rearrangemenentFn = (
   entity: IActionItemsList[]
 ) => {
   const { active, over } = event;
-  console.log(">>>>>>>>>>>>>>>", active, ">>>>>>>>>>>>>>>", over);
   let rearangedList: IActionItemsList[] = [];
-  if (active.id == over?.id) return;
   if (active.id !== undefined && over?.id !== undefined) {
     const originalPosition = entity?.findIndex((item) => item.id == active.id);
     const newPosition = entity?.findIndex((item) => item.id == over?.id);
@@ -16,5 +14,6 @@ export const rearrangemenentFn = (
       rearangedList = arrayMove(entity ?? [], originalPosition, newPosition);
     }
   }
+  if (active.id == over?.id) return;
   return rearangedList;
 };
