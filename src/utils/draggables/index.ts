@@ -8,12 +8,12 @@ export const rearrangemenentFn = (
   const { active, over } = event;
   let rearangedList: IActionItemsList[] = [];
   if (active.id !== undefined && over?.id !== undefined) {
-    const originalPosition = entity?.findIndex((item) => item.id == active.id);
-    const newPosition = entity?.findIndex((item) => item.id == over?.id);
+    const originalPosition = entity?.findIndex((item) => item.id === active.id);
+    const newPosition = entity?.findIndex((item) => item.id === over?.id);
     if (originalPosition !== undefined && newPosition !== undefined) {
       rearangedList = arrayMove(entity ?? [], originalPosition, newPosition);
     }
   }
-  if (active.id == over?.id) return;
+  // if (active.id === over?.id) return;
   return rearangedList;
 };
